@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churn Prediction</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Churn Prediction</span></h2>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits wheather customer churn or not, Built with Flask and Deployed in localhost.</p><br>
+        <p>(Note:This model is 90% accurate)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="creditscore">CreditScore</label>
+        <input type="text" id="creditscore" name="creditscore" placeholder="Your creditscore.."><br>
+
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Age in Numbers"><br>
+
+        <label for="tenure">Tenure</label>
+        <input type="text" id="tenure" name="tenure" placeholder="Tenure"><br>
+
+        <label for="balance">Balance</label>
+	      <input type="text" id="balance" name="balance" placeholder="Balance Amount"><br>
+        
+  
+        <label for="no_of_products">NumOfProducts</label>
+        <input type="text" id="no_of_products" name="no_of_products" placeholder="no_of_products"><br>
+
+        <label for="hascrcard">HasCrCard</label>
+        <select id="hascrcard" name="hascrcard">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+        
+        <label for="isactivemember">IsActiveMember</label>
+        <select id="isactivemember" name="isactivemember">
+          <option selected>----select option----</option>
+          <option value="1">Active</option>
+          <option value="0">NotActive</option>
+        </select><br>
+
+        <label for="estimatedsalary">EstimatedSalary</label>
+        <input type="text" id="estimatedsalary" name="estimatedsalary" placeholder="estimatedsalary in rupees"><br>
+
+
+        <label for="geography_germany">Geography_Germany</label>
+        <select id="geography_germany" name="geography_germany">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="geography_spain">Geography_Spain</label>
+        <select id="geography_spain" name="geography_spain">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+       <label for="gender_male">Gender_Male</label>
+        <select id="gender_male" name="gender_male">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+</body>
+
+</html>
