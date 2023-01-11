@@ -10,7 +10,11 @@ USER root
 
 RUN apt-get update && apt-get install -y jq
 
-RUN mkdir model raw_data processed_data results
+RUN mkdir /home/coea
+
+RUN cd /home/coea
+
+RUN mkdir model raw_data processed_data results 
 
 
 ENV RAW_DATA_DIR=/home/coea/raw_data
