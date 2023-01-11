@@ -5,22 +5,18 @@ ENV https_proxy http://172.30.10.43:3128
 
 RUN pip install joblib
 
-
 USER root
 
 RUN apt-get update && apt-get install -y jq
 
-RUN mkdir /home/coea
-
-RUN cd /home/coea
 
 RUN mkdir model raw_data processed_data results 
 
 
-ENV RAW_DATA_DIR=/home/coea/raw_data
-ENV PROCESSED_DATA_DIR=/home/coea/processed_data
-ENV MODEL_DIR=/home/coea/model
-ENV RESULTS_DIR=/home/coea/results
+ENV RAW_DATA_DIR=/home/jovyan/raw_data
+ENV PROCESSED_DATA_DIR=/home/jovyan/processed_data
+ENV MODEL_DIR=/home/jovyan/model
+ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=Churn_Prediction.csv
 
 
